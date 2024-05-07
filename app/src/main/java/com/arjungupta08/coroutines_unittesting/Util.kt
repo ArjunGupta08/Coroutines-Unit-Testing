@@ -20,10 +20,10 @@ class Util(val dispatcher: CoroutineDispatcher) {
         return "User - CheezyCode"
     }
 
-    suspend fun getAddress() : String {
+    var globalArg = false
+    fun getAddress() {
         CoroutineScope(dispatcher).launch {
-            delay(2000)
+            globalArg = true
         }
-        return "My Address - ArjunGupta08"
     }
 }
